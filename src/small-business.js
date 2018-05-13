@@ -36,17 +36,17 @@ const Database = {
         {
             "computerId": 1,
             "model_name": "Dell 5560",
-            "EmployeeId": 1
+            "employeeId": 1
         },
         {
             "computerId": 3,
             "model_name": "HP 540",
-            "EmployeeId": 2
+            "employeeId": 2
         },
         {
             "computerId": 4,
             "model_name": "Dell XX60",
-            "EmployeeId": 3
+            "employeeId": 3
         }
     ]
 }
