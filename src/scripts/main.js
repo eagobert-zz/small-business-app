@@ -1,4 +1,5 @@
 // Purpose to practice displaying to the DOM with JavaScript
+//Author: Erin Agobert
 
 //Get the element with the ID of "employee_list" and store in the variable "section"
 const section = document.getElementById("employee_list")
@@ -6,16 +7,16 @@ const section = document.getElementById("employee_list")
 //Loop through "employees" in the database
 Database.employees.forEach(employee => {
 
-    const card = document.createElement("div")
+    const card = document.createElement("article")
     card.classList.add("employee");
 
     //Create an element to hold employee name
-    const employeeName = document.createElement("h3");
+    const employeeName = document.createElement("header");
     //Add the class name "employee_name"
     employeeName.classList.add("employee__name");
 
     //Create employee name text
-    employeeName.textContent = employee.first_name + " " + employee.last_name;
+    employeeName.innerHTML = "<h1>" + employee.first_name + " " + employee.last_name + "</h1>";
 
     //Append employee name to card div
     card.appendChild(employeeName);
@@ -27,13 +28,13 @@ Database.employees.forEach(employee => {
         if(employee.departmentId === department.departmentId){
 
             //Create element to hold employee department
-            const employeeDept = document.createElement("p");
+            const employeeDept = document.createElement("section");
 
             //Add the class name "employee__department"
             employeeDept.classList.add("employee__department");
 
             //Create employee department text
-            employeeDept.textContent = department.department_name
+            employeeDept.textContent = "Works in the " + department.department_name + " department."
             card.appendChild(employeeDept)
         }
 
@@ -46,11 +47,11 @@ Database.employees.forEach(employee => {
         if(employee.employeeId === computer.employeeId){
 
             //Create element to hold employee computer name
-            const computerName = document.createElement("p")
+            const computerName = document.createElement("section")
             computerName.classList.add("employee__computer");
 
             //Create computer model name text
-            computerName.textContent = computer.model_name;
+            computerName.textContent = "Currently using a " + computer.model_name + " computer.";
             card.appendChild(computerName)
         }
 
